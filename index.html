@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" type="text/css" href="style/index.css">
+ <title>Политический тест</title>
+</head>
+<body id="app" v-cloak>
+
+  <header class="header">
+    <span class="header__title">Простой и надежный тест по экономике</span>
+    <span class="header__subtitle">Экономика слишком важная наука, чтобы доверять ее экономистам</span>
+      <ul class="items__header">
+        <li class="item__header"><a to="/">На главную</a></li>
+        <li class="item__header"><a to="/quiz">Начать test</a></li>
+        <li class="item__header"><a to="/result">Результат</a></li>
+      </ul>
+  </header>
+  
+  <main  class="page">
+    <section class="start__section" v-if="showSection === 'start'">
+      <h1 class="start__header">Добро пожаловать!</h1>
+      <p class="start__subtitle">Вы на странице экономического теста. Данный тест поможет Вам определить ваш базовый уровень знаний в этой общественной науке. </p>
+      <div class="start__wrap-img">
+        <img class="start__img"  :src="showStartPageImage" alt="фото экономиста">
+      </div>
+       <a to="/quiz">
+        <button  class="quiz__form-btn" @click="selectSection(1)">Начать тестирование</button>
+      </a>
+    </section>
+
+    <section class="quiz__section" v-if="showSection === 'quiz'">
+      <form action="submit" class="quiz__form" @submit.prevent v-if="questions[number]">
+        <span class="quiz__form-title">Вопрос № {{ questions[number].id }}</span>
+        <span class="quiz__form-subtitle">{{ questions[number].title }}</span>
+        <ul class="quiz__questions">
+          <li class="quiz__question"
+            v-for="answer in questions[number].options"
+            :key="answer.id"
+            >
+            <!-- <input type="radio" class="" :value="answer.title" v-model="ans" @change="scoringPoints(answer.score)">{{ answer.title }} -->
+
+            <div class="form_radio_btn">
+              <input :id="answer.id" type="radio" name="radio" :value="answer.title" v-model="ans" @change="scoringPoints(answer.score)">
+              <label :for="answer.id">&#128402;</label>
+            </div>
+            <span class="quiz__question-text">{{ answer.title }}</span>
+          </li>
+        </ul>
+          <button
+          class="quiz__form-btn"
+          @click="nextQuestion()"
+          :disabled="isDisabled"
+          >
+          Выбрать
+        </button>
+      </form>
+    </section>
+
+    <section class="result__page" v-if="showSection === 'result'">
+        <h1 class="result__title">Ваш результат: {{ totalScore }}</h1>
+        <p class="result__description">{{ showResultMessage }}</p>
+        <div class="result__wrap-img">
+          <img class="result__img"  :src="showResultImage" alt="альтернативный текст">
+        </div>
+      <div class="result__data">
+        <h3 class="result__subtitle">Вы ответили:</h3>
+        <span class="result__valid">Правильно на вопросы: {{ showCorrectAnswers }}</span>
+        <span class="result__invalid">Неправильно на вопросы: {{ showIncorrectAnswers }} ans</span>
+      </div>
+        <a to="/quiz">
+          <button class="quiz__form-btn" @click="refreshData">Начать сначала</button>
+        </a>
+    </section>
+ </main>
+
+ <footer class="footer">
+  <span class="footer__text">&#169; Разработка приложение WebSeven, {{ getYear }}</span>
+</footer>
+<!-- Скачиваем файл CDN локально к себе в приложение. Скачать можно по ссылке https://unpkg.com/vue@3.2.36/dist/vue.global.js -->
+  <script src="js/vue.js"></script>
+  <script src="js/questions.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
