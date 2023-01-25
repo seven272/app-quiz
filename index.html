@@ -5,12 +5,12 @@
  <meta http-equiv="X-UA-Compatible" content="IE=edge">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <link rel="stylesheet" type="text/css" href="style/index.css">
- <title>Политический тест</title>
+ <title>Экономический тест</title>
 </head>
 <body id="app" v-cloak>
 
   <header class="header">
-    <span class="header__title">Простой и надежный тест по экономике</span>
+    <span class="header__title">Тест по экономике</span>
     <span class="header__subtitle">Экономика слишком важная наука, чтобы доверять ее экономистам</span>
       <ul class="items__header">
         <li class="item__header"><a to="/">На главную</a></li>
@@ -21,14 +21,11 @@
   
   <main  class="page">
     <section class="start__section" v-if="showSection === 'start'">
-      <h1 class="start__header">Добро пожаловать!</h1>
-      <p class="start__subtitle">Вы на странице экономического теста. Данный тест поможет Вам определить ваш базовый уровень знаний в этой общественной науке. </p>
+      <div class="start__description">Вы на странице экономического теста. Данный тест поможет Вам определить ваш базовый уровень знаний в этой общественной науке. </div>
       <div class="start__wrap-img">
-        <img class="start__img"  :src="showStartPageImage" alt="фото экономиста">
+        <img class="start__img"  :src="showStartPageImage" alt="фото">
       </div>
-       <a to="/quiz">
-        <button  class="quiz__form-btn" @click="selectSection(1)">Начать тестирование</button>
-      </a>
+      <button class="start__btn" @click="selectSection(1)">Начать тестирование</button>
     </section>
 
     <section class="quiz__section" v-if="showSection === 'quiz'">

@@ -22,7 +22,7 @@ const App = {
    return arrNamesPages[this.pageInd]
   },
   showStartPageImage () {
-   return './assets/photos/photo_5.png'
+   return './assets/photos/preview.png'
   },
   showCorrectAnswers () {
    let correctAnswers = this.answers.correct.join(', ')
