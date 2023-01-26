@@ -21,6 +21,31 @@ const App = {
    const arrNamesPages = ['start', 'quiz', 'result']
    return arrNamesPages[this.pageInd]
   },
+  styleBackground () {
+    let fon = {}
+    if (this.pageInd !== 0 ) {
+      fon = {
+        backgroundImage: 'url("./assets/photos/fon-1.jpg")'
+      }
+    }
+    return fon
+  },
+  styleWhiteHeader () {
+    let newStyle = {}
+    if (this.pageInd !== 0 ) {
+      newStyle = {
+        color: '#ffffff'
+      }
+      return newStyle
+    }
+  },
+  classWhiteHeader () {
+    let name = ''
+    if (this.pageInd !== 0 ) {
+      name='item__header_white'
+    }
+    return name
+  },
   showStartPageImage () {
    return './assets/photos/preview.png'
   },

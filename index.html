@@ -7,19 +7,19 @@
  <link rel="stylesheet" type="text/css" href="style/index.css">
  <title>Экономический тест</title>
 </head>
-<body id="app" v-cloak>
+<body id="app" :style="styleBackground" v-cloak>
 
   <header class="header">
-    <span class="header__title">Тест по экономике</span>
-    <span class="header__subtitle">Экономика слишком важная наука, чтобы доверять ее экономистам</span>
+    <span class="header__title" :style="styleWhiteHeader">Тест по экономике</span>
+    <span class="header__subtitle" :style="styleWhiteHeader">Экономика слишком важная наука, чтобы доверять ее экономистам</span>
       <ul class="items__header">
-        <li class="item__header"><a to="/">На главную</a></li>
-        <li class="item__header"><a to="/quiz">Начать test</a></li>
-        <li class="item__header"><a to="/result">Результат</a></li>
+        <li class="item__header" :class="classWhiteHeader"><a href="/">На главную</a></li>
+        <li class="item__header" :class="classWhiteHeader"><a href="/quiz">Начать test</a></li>
+        <li class="item__header" :class="classWhiteHeader"><a href="/result">Результат</a></li>
       </ul>
   </header>
   
-  <main  class="page">
+  <main  class="page" :style="styleBackground">
     <section class="start__section" v-if="showSection === 'start'">
       <div class="start__description">Вы на странице экономического теста. Данный тест поможет Вам определить ваш базовый уровень знаний в этой общественной науке. </div>
       <div class="start__wrap-img">
@@ -30,7 +30,7 @@
 
     <section class="quiz__section" v-if="showSection === 'quiz'">
       <form action="submit" class="quiz__form" @submit.prevent v-if="questions[number]">
-        <span class="quiz__form-title">Вопрос № {{ questions[number].id }}</span>
+        <span class="quiz__form-title">{{ questions[number].id }}</span>
         <span class="quiz__form-subtitle">{{ questions[number].title }}</span>
         <ul class="quiz__questions">
           <li class="quiz__question"
@@ -41,7 +41,8 @@
 
             <div class="form_radio_btn">
               <input :id="answer.id" type="radio" name="radio" :value="answer.title" v-model="ans" @change="scoringPoints(answer.score)">
-              <label :for="answer.id">&#128402;</label>
+              <label :for="answer.id"></label>
+              <!-- <label :for="answer.id">&#128402;</label> -->
             </div>
             <span class="quiz__question-text">{{ answer.title }}</span>
           </li>

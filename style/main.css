@@ -2,6 +2,20 @@
  display: none !important;
 }
 
+@font-face {
+	font-family: 'Josefin Sans Regular';
+	src: url('../assets/fonts/JosefinSans-Regular.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Josefin Sans Bold';
+	src: url('../assets/fonts/JosefinSans-Bold.woff2') format('woff2');
+	font-weight: 700;
+	font-style: normal;
+}
+
 body, html
 {
   display: flex;
@@ -53,49 +67,43 @@ a {
 
 .quiz__form-title {
   display: flex;
-  padding: 10px 20px;
-  background: #FFF2E5;
-  color: #D98302;
-  border-radius: 1px;
-  font-family: 'DM Sans', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-family: 'Josefin Sans Bold', Verdana, sans-serif;
   font-style: normal;
-  font-weight: 400;
-  font-size: 17px;
-  line-height: 8px;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 112%;
+  letter-spacing: 0.11em;
   margin-bottom: 50px;
 }
 
 .quiz__form-subtitle {
-  width: 80%;
-  background: #FDFDFC;
+  width: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #B7B7B3;
-  border-radius: 4px;
   padding: 20px 0;
   margin-bottom: 15px;
   text-align: center;
-  font-family: 'Roboto';
+  font-family: 'Josefin Sans Bold', Verdana, sans-serif;;
   font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 31px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 112%;
   color: #1B1C1D
 }
 
 .quiz__form {
- max-width: 750px;
- /* max-height: 850px; */
+ max-width: 600px;
  width: 100%;
  height: auto;
  display: flex;
  flex-direction: column;
  align-items: center;
- background: #FFFFFF;
- border: 2px solid #1B1C1D;
- box-shadow: 2px 2px 0px #1B1C1D;
- border-radius: 8px;
+ background: #D9D9D9;
+ border-radius: 60px;
  padding: 15px;
 }
 
@@ -107,26 +115,30 @@ a {
  flex-direction: column;
  align-items: center;
  justify-content: center;
- background: #FDFDFC;
- border-radius: 12px;
+ background: #8A91B6;
+ border-radius: 21px;
 }
 
 .quiz__question {
   width: 100%;
-  /* background: #F5F3EA; */
-  border-bottom: 2px solid #43423D;;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid #43423D;;
   padding: 20px 0;
   margin-bottom: 15px;
   text-align: left;
-  font-family: 'Roboto';
+  font-family: 'Josefin Sans Bold', Verdana, sans-serif;;
   font-style: normal;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 31px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 112%;
   color: #1B1C1D
  }
  .quiz__question:last-child {
   margin-bottom: 0;
+  border-bottom: none;
  }
 
 .btn {
@@ -147,21 +159,23 @@ a {
 }
 
 .quiz__form-btn {
-  width: 50%;
-  min-width: 120px;
-  background: #A8EBFF;
-  border: 2px solid #1B1C1D;
-  box-shadow: 2px 2px 0px #1B1C1D;
-  border-radius: 6px;
-  font-weight: 400;
+  border: none;
+  width: 37%;
+  min-height: 30px;
+  max-height: 95px;
+  height: 13vh;
+  max-width: 300px;
+  background: linear-gradient(90.22deg, #C3D4DE 0%, #B4B4B4 100%);
+  border-radius: 70px;
+  font-family: 'Josefin Sans Bold', Verdana;
+  text-transform: uppercase;
+  font-style: bold;
+  font-weight: 700;
   font-size: 16px;
-  line-height: 24px;
-  color: #1B1C1D;
-  text-align: center;
-  padding: 10px 25px;
-  font-size: 15px;
-  display: block;
-  margin: 2px auto 15px;
+  line-height: 112%;
+  letter-spacing: 0.5px;
+  color: #000000;
+  overflow: hidden;
   cursor: pointer;
 }
 
