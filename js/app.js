@@ -3,7 +3,7 @@ const App = {
  data () {
   return {
    title: 'Тест на базовое знание экономики',
-   pageInd: 0,
+   pageInd: 2,
    number: 0,
    questions: questions,
    score: 0,
@@ -23,9 +23,25 @@ const App = {
   },
   styleBackground () {
     let fon = {}
-    if (this.pageInd !== 0 ) {
+    let name = 'fon-1'
+    if (this.number%2===0) {
+      name = 'fon-2'
+    } else if (this.number%3===0) {
+      name = 'fon-3'
+    }
+    
+    if (this.pageInd === 1) {
       fon = {
-        backgroundImage: 'url("./assets/photos/fon-1.jpg")'
+        // backgroundImage: 'url("./assets/photos/fon-1.jpg")'
+        background: `linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("./assets/photos/${name}.jpg")`,
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover'
+      }
+    } else if (this.pageInd === 2) {
+      fon = {
+        background: 'linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("./assets/photos/fon-4.jpg")',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover'
       }
     }
     return fon
@@ -34,7 +50,8 @@ const App = {
     let newStyle = {}
     if (this.pageInd !== 0 ) {
       newStyle = {
-        color: '#ffffff'
+        color: '#ffffff',
+        background: 'none'
       }
       return newStyle
     }
@@ -45,6 +62,16 @@ const App = {
       name='item__header_white'
     }
     return name
+  },
+  styleWhiteFooter () {
+    let newStyle = {}
+    if (this.pageInd !== 0 ) {
+      newStyle = {
+        color: '#ffffff',
+        background: 'none'
+      }
+      return newStyle
+    }
   },
   showStartPageImage () {
    return './assets/photos/preview.png'

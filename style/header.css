@@ -29,6 +29,18 @@
  margin: 0 0 50px 0;
  background: #fff;
 }
+
+.header_white {
+  width: 65%;
+  max-width: 750px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 50px 0;
+  background: none;
+ }
+
 .header__title {
   max-width: 600px;
   height: auto;

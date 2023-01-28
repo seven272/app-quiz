@@ -21,6 +21,7 @@ body, html
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 100%;
   max-width: 1160px;
   overflow: auto;
@@ -49,9 +50,14 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
-  background-color: #ffffff;
+  max-width: 1160px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../assets/photos/fon-1.jpg"); */
+  /* background-image:  url("../assets/photos/fon-1.jpg"); */
 }
 .main {
   width: 100%;
@@ -63,6 +69,7 @@ a {
   padding: 0;
   margin: 0 auto;
   display: flex;
+  justify-content: center;
 }
 
 .quiz__form-title {

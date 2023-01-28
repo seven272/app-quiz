@@ -7,19 +7,20 @@
  <link rel="stylesheet" type="text/css" href="style/index.css">
  <title>Экономический тест</title>
 </head>
-<body id="app" :style="styleBackground" v-cloak>
+<body id="app" v-cloak >
+  <main class="page" :style="styleBackground" >
 
-  <header class="header">
+  <header class="header" :style="styleWhiteHeader">
     <span class="header__title" :style="styleWhiteHeader">Тест по экономике</span>
     <span class="header__subtitle" :style="styleWhiteHeader">Экономика слишком важная наука, чтобы доверять ее экономистам</span>
       <ul class="items__header">
-        <li class="item__header" :class="classWhiteHeader"><a href="/">На главную</a></li>
-        <li class="item__header" :class="classWhiteHeader"><a href="/quiz">Начать test</a></li>
-        <li class="item__header" :class="classWhiteHeader"><a href="/result">Результат</a></li>
+        <li class="item__header" :class="classWhiteHeader"><a href="" @click.prevent="selectSection(0)">На главную</a></li>
+        <li class="item__header" :class="classWhiteHeader"><a href="" @click.prevent="selectSection(1)">Начать test</a></li>
+        <li class="item__header" :class="classWhiteHeader"><a href="" @click.prevent="selectSection(2)">Результат</a></li>
       </ul>
   </header>
   
-  <main  class="page" :style="styleBackground">
+  
     <section class="start__section" v-if="showSection === 'start'">
       <div class="start__description">Вы на странице экономического теста. Данный тест поможет Вам определить ваш базовый уровень знаний в этой общественной науке. </div>
       <div class="start__wrap-img">
@@ -58,25 +59,21 @@
     </section>
 
     <section class="result__page" v-if="showSection === 'result'">
-        <h1 class="result__title">Ваш результат: {{ totalScore }}</h1>
-        <p class="result__description">{{ showResultMessage }}</p>
-        <div class="result__wrap-img">
-          <img class="result__img"  :src="showResultImage" alt="альтернативный текст">
-        </div>
-      <div class="result__data">
-        <h3 class="result__subtitle">Вы ответили:</h3>
-        <span class="result__valid">Правильно на вопросы: {{ showCorrectAnswers }}</span>
-        <span class="result__invalid">Неправильно на вопросы: {{ showIncorrectAnswers }} ans</span>
-      </div>
-        <a to="/quiz">
+          <h1 class="result__title">Ваш результат: {{ totalScore }}</h1>
+          <p class="result__description">{{ showResultMessage }}</p>
+          <div class="result__data">
+            <h3 class="result__subtitle">Вы ответили:</h3>
+            <span class="result__valid">Правильно на вопросы: {{ showCorrectAnswers }}</span>
+            <span class="result__invalid">Неправильно на вопросы: {{ showIncorrectAnswers }} ans</span>
+          </div>
+        
           <button class="quiz__form-btn" @click="refreshData">Начать сначала</button>
-        </a>
     </section>
+    <footer class="footer" :style="styleWhiteFooter">
+      <span class="footer__text" :style="styleWhiteFooter">&#169; Разработка приложение WebSeven, {{ getYear }}</span>
+    </footer>
  </main>
 
- <footer class="footer">
-  <span class="footer__text">&#169; Разработка приложение WebSeven, {{ getYear }}</span>
-</footer>
 <!-- Скачиваем файл CDN локально к себе в приложение. Скачать можно по ссылке https://unpkg.com/vue@3.2.36/dist/vue.global.js -->
   <script src="js/vue.js"></script>
   <script src="js/questions.js"></script>

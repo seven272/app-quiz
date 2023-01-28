@@ -23,9 +23,9 @@
 }
 
 .footer__text {
- font-family: 'Josefin Sans Bold', Verdana, sans-serif;
+ font-family: 'Josefin Sans Regular', Verdana, sans-serif;
  font-style: normal;
- font-weight: 700;
+ font-weight: 400;
  font-size: 20px;
  line-height: 20px;
  letter-spacing: 0.5px;

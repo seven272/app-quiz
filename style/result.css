@@ -1,25 +1,44 @@
+@font-face {
+	font-family: 'Josefin Sans Regular';
+	src: url('../assets/fonts/JosefinSans-Regular.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Josefin Sans Bold';
+	src: url('../assets/fonts/JosefinSans-Bold.woff2') format('woff2');
+	font-weight: 700;
+	font-style: normal;
+}
+
 .result__page {
- max-width: 750px;
- /* max-height: 850px; */
+ /* max-width: 750px;
  width: 100%;
- height: auto;
+ height: auto; */
  display: flex;
  flex-direction: column;
  align-items: center;
- background: #FFFFFF;
- border: 2px solid #1B1C1D;
- box-shadow: 2px 2px 0px #1B1C1D;
- border-radius: 8px;
- padding: 15px;
+ width: 576px;
+ height: 565px;
+ background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../assets/photos/result-2.jpg");
+ background-repeat: no-repeat;
+ background-position: center center;
+ object-fit: cover;
+ background-size: cover;
+ border-radius: 60px; 
+ box-sizing: border-box;
+ overflow: hidden;
 }
 
 .result__title {
-  font-family: 'DM Sans', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+  font-family: 'Josefin Sans Bold', Verdana, sans-serif;
   font-style: bold;
   font-weight: 700;
-  font-size: 26px;
-  line-height: 18px;
-  letter-spacing: 0.5px;
+  font-size: 40px;
+  line-height: 112%;
+  letter-spacing: 0.06em;
+  color: #ffffff;
   margin-bottom: 15px;
   display: flex;
   justify-content: center;
@@ -27,30 +46,18 @@
 }
 
 .result__description {
-  font-family: 'DM Sans', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+  font-family: 'Josefin Sans Regular', Verdana, sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 18px;
-  letter-spacing: 0.5px;
+  font-size: 25px;
+  line-height: 112%;
+  letter-spacing: 0.02em;
+  color: #FFFFFF;
   margin-bottom: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-}
-
-.result__wrap-img {
- width: 50%;
- height: auto;
- border: 2px solid red;
-}
-
-.result__img {
- object-fit: cover;
- width: 100%;
- height: 100%;
-
 }
 
 .result__data{
@@ -60,23 +67,42 @@
  align-items: flex-start;
 }
 .result__subtitle {
- width: 100%;
- align-self: center;
- text-align: center;
+  width: 100%;
+  font-family: 'Josefin Sans Bold', Verdana, sans-serif;
+  font-style: bold;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 112%;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+  align-self: center;
+  text-align: center;
 }
 
 .result__valid {
- width: 100%;
- color: rgb(106, 47, 255);
- border: 3px solid blue;
- padding: 0 10px;
- margin-bottom: 10px;
+  width: 100%;
+  color: #ffffff;
+  border: 1px solid white;
+  font-family: 'Josefin Sans Regular', Verdana, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 112%;
+  letter-spacing: 0.02em;
+  padding: 10px 0 10px 10px;
+  margin-bottom: 15px;
 }
 
 .result__invalid {
- width: 100%;
- color: rgb(255, 134, 47);
- border: 3px solid red;
- padding: 0 10px;
- margin-bottom: 10px;
+  width: 100%;
+  color: #ffffff;
+  border: 1px solid white;
+  font-family: 'Josefin Sans Regular', Verdana, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 112%;
+  letter-spacing: 0.02em;
+  padding: 10px 0 10px 10px;
+  margin-bottom: 55px;
 }
