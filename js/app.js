@@ -99,17 +99,23 @@ const App = {
    return message
  },
  showResultImage () {
-   let image = 'photo_1'
+  let image = ''
    if (this.totalScore >= 0 && this.totalScore <= 10) {
-     image = 'photo_1'
+     image = 'result-1'
    } else if (this.totalScore > 10 && this.totalScore <= 50) {
-     image = 'photo_2'
+     image = 'result-2'
    } else if (this.totalScore > 50 && this.totalScore < 90) {
-     image = 'photo_3'
+     image = 'result-3'
    } else {
-     image = 'photo_4'
+     image = 'result-4'
    }
-   return `./assets/photos/${image}.jpg`
+   let fon = {
+    background: `linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("./assets/photos/${image}.jpg")`,
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center center',
+    backgroundSize: 'cover'
+  }
+   return fon
   },
   getYear () {
    const dateObj = new Date()
@@ -124,6 +130,7 @@ const App = {
   nextQuestion () {
    this.number++
    this.totalScore += this.score
+   this.ans = ''
    if (this.score === 10) {
     this.answers.correct.push(this.number)
    } else if (this.score === 0) {
@@ -133,6 +140,7 @@ const App = {
     this.isDisabled = true
     this.selectSection(2)
    }
+   this.isDisabled = false
   },
   scoringPoints (payload) {
    this.score = payload
@@ -140,7 +148,10 @@ const App = {
   refreshData () {
    this.score = 0
    this.totalScore = 0
-   this.selectSection(0)
+   this.number = 0
+   this.answers.correct = []
+   this.answers.incorrect = []
+   this.selectSection(1)
   }
  }
 

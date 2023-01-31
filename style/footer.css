@@ -20,6 +20,7 @@
  justify-content: center;
  align-items: center;
  background: #fff;
+	text-align: center;
 }
 
 .footer__text {
@@ -31,4 +32,15 @@
  letter-spacing: 0.5px;
  color: #626262;
  padding: 20px 0;
+}
+
+@media screen and (max-width: 375px) {
+	.footer {
+			width: 90%;
+	}
+
+	.footer__text {
+		font-size: 16px;
+	}
+	
 }

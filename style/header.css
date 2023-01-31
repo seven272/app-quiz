@@ -21,6 +21,7 @@
 
 .header {
  width: 65%;
+ height: 222px;
  max-width: 750px;
  display: flex;
  flex-direction: column;
@@ -223,4 +224,28 @@
   padding-top: 3px;
   color: #fff;
   border-bottom: 3px solid #fff;
+}
+
+@media screen and (max-width: 750px) {
+  .header {
+    width: 95%;
+  }
+  
+}
+
+@media screen and (max-width: 375px) {
+  .header {
+    width: 95%;
+  }
+  .header__title, .header__title_white {
+    max-width: 375px;
+    font-size: 25px;
+    line-height: 30px;
+  }
+  .header__subtitle, .header__subtitle_white {
+    font-size: 14px;
+  }
+  .item__header a, .item__header_white a {
+    font-size: 14px;
+  }
 }
