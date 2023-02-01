@@ -103,7 +103,16 @@
   margin-bottom: 55px;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 745px) {
+  .result__page {
+    max-width: 650px;
+    width: 90%;
+    height: 60%;
+    
+   }
+  }
+
+@media screen and (max-width: 645px) {
   .result__page {
     max-width: 650px;
     width: 90%;

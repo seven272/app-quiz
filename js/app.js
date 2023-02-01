@@ -3,7 +3,7 @@ const App = {
  data () {
   return {
    title: 'Тест на базовое знание экономики',
-   pageInd: 2,
+   pageInd: 0,
    number: 0,
    questions: questions,
    score: 0,

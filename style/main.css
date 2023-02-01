@@ -211,7 +211,7 @@ button[disabled]{
   
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 645px) {
   .quiz__section {
     width: 90%;
   }
